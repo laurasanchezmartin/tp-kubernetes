@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mongodb-deployment
+  name: mongodb
 spec:
   selector:
     matchLabels:
@@ -15,9 +15,9 @@ spec:
       - name: mongodb
         image: mongo:4-focal
         env:
-          - name: MONGO_INIT_DB_ROOT_USERNAME
+          - name: MONGO_INITDB_ROOT_USERNAME
             value: root
-          - name: MONGO_INIT_DB_ROOT_PASSWORD
+          - name: MONGO_INITDB_ROOT_PASSWORD
             value: example
         resources:
           limits:
