@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mongodb-deployment
+  name: mongoexpress-deployment
 spec:
   selector:
     matchLabels:
-      app: mongodb
+      app: mongoexpress
   template:
     metadata:
       labels:
-        app: mongodb
+        app: mongoexpress
     spec:
       containers:
-      - name: mongodb
-        image: mongo:4-focal
+      - name: mongoexpress
+        image: mongo-express:1-18-alpine3.18
         env:
           - name: MONGO_INIT_DB_ROOT_USERNAME
             value: root
@@ -24,17 +24,19 @@ spec:
             memory: "128Mi"
             cpu: "500m"
         ports:
-        - containerPort: 27017
+        - containerPort: 8081
 
 ---
 
 apiVersion: v1
 kind: Service
 metadata:
-  name: mongodb-service
+  name: mongoexpress-service
 spec:
   selector:
-    app: mongodb
+    app: mongoexpress
+  type: LoadBalancer
   ports:
-  - port: 27017
-    targetPort: 27017
+  - port: 8081
+    targetPort: 8081
+    nodePort: 30000
