@@ -1,0 +1,37 @@
+#Arborescence Projet Avis
+C:\Users\Administrateur\TP\mii\mern\tp-kubernetes\mern
+│
+├── deployment
+│   ├── mongodb-deployment.yml
+│   ├── mongoexpress-deployment.yml
+│   ├── node-back-deployment.yml
+│   └── react-vite-deployment.yml
+│
+└── sources
+    ├── front-avis
+    │   ├── public
+    │   │   └── vite.svg
+    │   ├── src
+    │   │   ├── assets
+    │   │   │   └── react.svg
+    │   │   ├── App.jsx
+    │   │   ├── Avis.jsx
+    │   │   ├── AvisEdit.jsx
+    │   │   ├── index.css
+    │   │   └── main.jsx
+    │   ├── .eslintrc.cjs
+    │   ├── .gitignore
+    │   ├── Dockerfile
+    │   ├── index.html
+    │   ├── package-lock.json
+    │   ├── package.json
+    │   ├── postcss.config.js
+    │   ├── README.md
+    │   ├── tailwind.config.js
+    │   └── vite.config.js
+    └── ms-avis
+        ├── .DS_Store
+        ├── Dockerfile
+        ├── index.js
+        ├── package-lock.json
+        └── package.json
