@@ -20,6 +20,11 @@ spec:
             cpu: "500m"
         ports:
         - containerPort: 5173
+        env:
+          - name: NODE_SERVICE
+            value: node-back-service
+          - name: NODE_PORT
+            value: "8000"
 
 ---
 
