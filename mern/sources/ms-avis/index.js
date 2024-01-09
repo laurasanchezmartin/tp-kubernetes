@@ -5,7 +5,21 @@ const mongoose = require('mongoose');
 const app =  express();
 app.use(express.urlencoded());
 app.use(express.json());
-mongoose.connect("mongodb://root:root@mongodb-service:27017/avis?authSource=admin");
+
+// Définition des variables d'environnement
+const mongodbHost = process.env.MONGODB_HOST ;
+const mongodbPort = process.env.MONGODB_PORT ;
+const mongodbUsername = process.env.MONGODB_USERNAME ;
+const mongodbPassword = process.env.MONGODB_PASSWORD ;
+console.log("mongodbHost = ")
+const mongodbUri = `mongodb://${mongodbUsername}:${mongodbPassword}@${mongodbHost}:${mongodbPort}/avis?authSource=admin`;
+console.log (mongodbUri)
+
+// Connexion à MongoDB
+mongoose.connect(mongodbUri, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 const schema = new mongoose.Schema({
   texte: String,
