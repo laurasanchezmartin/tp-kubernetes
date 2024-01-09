@@ -5,3 +5,14 @@ metadata:
 data:
   database_url: avis-bdd.local
   nameAdmin: root
+
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: node-configmap
+data:
+  port: "27017"
+  host: mongodb-service
+

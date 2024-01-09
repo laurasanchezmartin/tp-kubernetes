@@ -22,13 +22,25 @@ spec:
         - containerPort: 8000
         env:
           - name: MONGODB_HOST
-            value: mongodb-service
+            valueFrom: 
+              configMapKeyRef:
+                name: node-configmap
+                key: host
           - name: MONGODB_PORT
-            value: "27017"
+            valueFrom:
+              configMapKeyRef:
+                name: node-configmap
+                key: port
           - name: MONGODB_USERNAME
-            value: root
+            valueFrom:
+              configMapKeyRef:
+                name: mongo-configmap
+                key: nameAdmin
           - name: MONGODB_PASSWORD
-            value: root
+            valueFrom: 
+              secretKeyRef:
+                name: mongodb-secret
+                key: password
 
 ---
 
