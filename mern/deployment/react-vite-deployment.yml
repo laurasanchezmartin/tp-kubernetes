@@ -33,5 +33,5 @@ spec:
   type: NodePort
   ports:
   - port: 5173
-    targetPort: 50
+    targetPort: 5173
     nodePort: 30001

@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const app =  express();
 app.use(express.urlencoded());
 app.use(express.json());
-mongoose.connect("mongodb://localhost/avis");
+mongoose.connect("mongodb://root:example@mongodb-service:27017/avis?authSource=admin");
 
 const schema = new mongoose.Schema({
   texte: String,
