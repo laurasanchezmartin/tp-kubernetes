@@ -16,3 +16,14 @@ data:
   port: "27017"
   host: mongodb-service
 
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: front-configmap
+data:
+  host: node-back-service
+  port: "8000"
+
+

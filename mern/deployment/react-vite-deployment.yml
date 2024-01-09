@@ -22,9 +22,15 @@ spec:
         - containerPort: 5173
         env:
           - name: NODE_SERVICE
-            value: node-back-service
+            valueFrom:
+              configMapKeyRef:
+                name: front-configmap
+                key: host
           - name: NODE_PORT
-            value: "8000"
+            valueFrom:
+              configMapKeyRef:
+                name: front-configmap
+                key: port
 
 ---
 
